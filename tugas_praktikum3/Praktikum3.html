@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>Halaman Web Sederhana</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <h1>Selamat Datang di Website Sederhana</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#">Beranda</a></li>
+                <li><a href="#">Tentang</a></li>
+                <li><a href="#">Layanan</a></li>
+                <li><a href="#">Kontak</a></li>
+            </ul>
+        </nav>
+        <div class="container">
+            <section class="content">
+                <h2>Artikel Utama</h2>
+                <p>Silahkan isi formulir di bawah ini untuk mendaftar.</p><br>
+
+                <form action="" method="post" enctype="multipart/form-data">
+                    <label for="Nama"><b>Nama Lengkap:</b></label><br>
+                    <input type="text" name="Username" placeholder="Masukkan Nama Anda" id="Nama">
+
+                    <label for="Email"><b>Email:</b></label><br>
+                    <input type="text" name="Email" placeholder="Masukkan Email Anda" id="Email">
+
+                    <label for="Password"><b>Password:</b></label><br>
+                    <input type="text" name="Password" placeholder="Masukkan Password Anda" id="Password">
+
+                    <p><b>Jenis Kelamin:</b></p>
+                    <label><input type="radio" name="gender" value="Laki-laki"> Laki-laki</label>
+                    <label><input type="radio" name="gender" value="Perempuan"> Perempuan</label><hr><br>
+                    
+                    <p><b>Hobi:</b></p>
+                    <label><input type="checkbox" name="Hobby" value="Musik">Musik</label>
+                    <label><input type="checkbox" name="Hobby" value="Olahraga">Olahraga</label>
+                    <label><input type="checkbox" name="Hobby" value="Memasak">Memasak</label><hr><br>
+
+                    <label for="Kota"><b>Pilih Kota:</b></label>
+                    <select name="Kota" id="Kota">
+                        <option value="jkt">Jakarta</option>
+                        <option value="krw">Karawang</option>
+                        <option value="sby">Surabaya</option>
+                        <option value="pwk">Purwakarta</option>
+                        <option value="bks">Bekasi</option>
+                    </select>
+
+                    <p><b>Pesan Tambahan</b></p>
+                    <input type="text" name="Pesan" placeholder="Tulis pesan tambahan di sini...">
+                </form>
+                <button class="btn">Kirim</button>
+            </section>
+            <aside class="sidebar">
+                <h2>Sidebar</h2>
+                <p>Bagian sidebar dapat berisi tautan,iklan atau informasi tambahan</p>
+            </aside>
+        </div>
+    </body>
+</html>
