@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>Tugas Praktikum 4</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="main.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Selamat Datang di Website Input Nilai</h1>
+        </header>
+        <div class="container">
+            <section class="content">
+                <h2>Laman Utama</h2>
+                <p>Silahkan Isi Nilai Anda di bawah Ini</p><br>
+
+                <form action="" method="post" enctype="multipart/form-data">
+                    <label for="Nim"><b>Nim:</b></label>
+                    <input type="number" name="Nim" placeholder="Masukkan Nim Anda" id="Nim">
+
+                    <label for="MK"><b>Mata Kuliah:</b></label>
+                    <input type="text" name="MK" placeholder="Masukkan Mata Kuliah Anda" id="MK">
+                    
+                    <label for="Nilai"><b>Nilai:</b></label>
+                    <input type="number" name="Nilai" placeholder="Masukkan Nilai Anda" id="Nilai">
+                </form>
+                <button class="btn" onclick="cekNilai()">Cek Nilai</button>
+                <p id="Hasil"></p>
+            </section>
+            <aside class="sidebar">
+                <h2>Grade Nilai</h2>
+                <p id="hasil"></p>
+            </aside>
+        </div>
+    </body>
+</html>
