@@ -27,7 +27,7 @@
             $sisa = $biaya - $diskon1;
 
             $diskon2 = 0;
-            if ($biaya >= 5000000 && $semester >= 8) {
+            if ($biaya >= 5000000 && $semester > 8) {
                 $diskon2 = 0.05 * $sisa;
             }
 

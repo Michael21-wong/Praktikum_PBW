@@ -5,7 +5,7 @@
     <body>
         <form method="post" action="">
             Nama: <input type="text" name="nama"><br>
-            Nilai: <input type="number" name="nilai"><br>
+            Nilai: <input type="text" name="nilai"><br>
             <input type="submit" name="submit" value="proses">
         </form>
         <br>
@@ -19,19 +19,20 @@
                 echo "Nama : $var_nama <br>";
                 echo "Nilai : $var_nilai <br>";
 
+                
                 if ($var_nilai >= 86 && $var_nilai <= 100) {
                     $predikat = "A";
                     $status = "Lulus";
-                } elseif ($var_nilai >= 75) {
+                } elseif ($var_nilai >= 75 && $var_nilai < 86) {
                     $predikat = "B";
                     $status = "Lulus";
-                } elseif ($var_nilai >= 65) {
+                } elseif ($var_nilai >= 65 && $var_nilai < 75) {
                     $predikat = "C";
                     $status = "Lulus";
-                } elseif ($var_nilai >= 50) {
+                } elseif ($var_nilai >= 50 && $var_nilai < 65) {
                     $predikat = "D";
                     $status = "Lulus";
-                } elseif ($var_nilai >= 0) {
+                } elseif ($var_nilai >= 0 && $var_nilai < 50) {
                     $predikat = "E";
                     $status = "Tidak Lulus";
                 } else {
