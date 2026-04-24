@@ -29,7 +29,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="hapus.php">Hapus Buku</a>
+                    <a class="nav-link" href="proses_hapus.php">Hapus Buku</a>
                 </li>
 
             </ul>

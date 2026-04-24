@@ -37,6 +37,7 @@
                     <th>Penulis</th>
                     <th>Tahun Terbit</th>
                     <th>Harga</th>
+                    <th>Aksi</th>
                 </tr>
             </thead>
             <tbody>

@@ -4,7 +4,7 @@ include 'nav.php';
 
 // Ambil daftar buku dan pelanggan
 $buku_result = $conn->query("SELECT ID, Judul FROM Buku");
-$pelanggan_result = $conn->query("SELECT ID, Nama FROM Pelanggan");
+$pelanggan_result = $conn->query("SELECT id_pelanggan, Nama FROM Pelanggan");
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +29,7 @@ $pelanggan_result = $conn->query("SELECT ID, Nama FROM Pelanggan");
             <select class="form-select" name="pelanggan_id" id="pelanggan_id" required>
                 <option value="">Pilih Pelanggan</option>
                 <?php while ($row = $pelanggan_result->fetch_assoc()): ?>
-                    <option value="<?= $row['ID'] ?>"><?= $row['Nama'] ?></option>
+                    <option value="<?= $row['id_pelanggan'] ?>"><?= $row['Nama'] ?></option>
                 <?php endwhile; ?>
             </select>
         </div>

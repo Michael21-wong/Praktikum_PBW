@@ -10,11 +10,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $total_harga = 0;
 
         // Insert ke tabel Pesanan
-        $stmt = $conn->prepare("INSERT INTO Pesanan (Tanggal_Pesanan, Pelanggan_ID, Total_Harga) VALUES (?, ?, ?)");
-        $stmt->bind_param("sid", $tanggal_pesanan, $pelanggan_id, $total_harga);
+        $stmt = $conn->prepare("INSERT INTO Pesanan (Tanggal_Pesanan, id_pelanggan, Total_Harga) VALUES (?, ?, ?)");
+        $stmt->bind_param("sid", $tanggal_pesanan, $pelanggan_id, $total_harga);    
         $stmt->execute();
         
-        $pesanan_id = $conn->insert_id;
+        $id_pesanan = $conn->insert_id;
 
         // Loop buku
         foreach ($_POST['buku'] as $buku) {
@@ -34,8 +34,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
 
             // Insert detail
-            $stmt = $conn->prepare("INSERT INTO Detail_Pesanan (Pesanan_ID, Buku_ID, Kuantitas, Harga_Per_Satuan) VALUES (?, ?, ?, ?)");
-            $stmt->bind_param("iiid", $pesanan_id, $buku_id, $kuantitas, $harga_per_satuan);
+            $stmt = $conn->prepare("INSERT INTO Detail_Pesanan (id_pesanan, id_buku, jumlah, subtotal) VALUES (?, ?, ?, ?)");
+            $stmt->bind_param("iiid", $id_pesanan, $buku_id, $kuantitas, $harga_per_satuan);
             $stmt->execute();
 
             // Hitung akumulasi total harga
@@ -48,8 +48,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         // Update total harga di tabel Pesanan
-        $stmt = $conn->prepare("UPDATE Pesanan SET Total_Harga = ? WHERE ID = ?");
-        $stmt->bind_param("di", $total_harga, $pesanan_id);
+        $stmt = $conn->prepare("UPDATE Pesanan SET Total_Harga = ? WHERE id_pesanan = ?");
+        $stmt->bind_param("di", $total_harga, $id_pesanan);
         $stmt->execute();
 
         $conn->commit();
